@@ -1,0 +1,23 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Data
+degrees = np.array([0, 15, 30, 45, 60, 75, 90, 105, 120, 135, 150, 165, 180, 195, 210, 225, 240, 255, 270, 285, 300, 315, 330, 345, 360])
+dB = np.array([-46.089, -45.708, -45.670, -46.980, -48.570, -50.120, -49.890, -53.020, -50.094, -51.272, -51.560, -54.230, -50.887, -50.280, -56.810, -60.230, -65.440, -67.732, -59.432, -70.890, -73.099, -60.020, -61.080, -59.220, -53.020])
+
+# Convert degrees to radians
+theta = degrees * np.pi / 180
+
+# Create the polar plot
+fig = plt.figure(figsize=(8,8))
+ax = fig.add_subplot(111, projection='polar')
+ax.plot(theta, dB, linewidth=2, color='red')
+ax.set_theta_zero_location('N')
+ax.set_theta_direction(-1)
+ax.set_rlabel_position(0)
+ax.set_title('Experimental Plot', fontsize=14)
+ax.set_xlabel('Degrees Rotated')
+ax.grid(True)
+
+# Show the plot
+plt.show()
